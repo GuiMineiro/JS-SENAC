@@ -1,4 +1,4 @@
-let grade = 3
+let grade = 10
 if (grade >=6 ) {
     console.log('Approved')
 }else{
