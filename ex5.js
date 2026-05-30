@@ -1,5 +1,7 @@
-let peso = 85
-let altura = 1.80
+const leia = require('prompt-sync')()
+let nome = leia ('Digite seu nome: ')
+let peso = leia ('Digite seu peso: ')
+let altura = leia ('Digite sua altura: ')
 let imc = peso / (altura * altura)
 if (imc < 18.5){ 
 console.log("Seu IMC é de "+imc.toFixed(2)+', você esta abaixo do peso')  
