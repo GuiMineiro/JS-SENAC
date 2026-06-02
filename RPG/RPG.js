@@ -1,6 +1,7 @@
 //projeto de rpg
 //escolha de personagem
 const leia = require('prompt-sync')()
+let heroiAtual = null
 function criarHeroi(nome,vida = 100,ataque = 10){
     return{
     nomeH:nome,
@@ -11,37 +12,41 @@ function criarHeroi(nome,vida = 100,ataque = 10){
 const heroi1 = criarHeroi('Chapolin',80,12)
 const heroi2 = criarHeroi('SuperSam',100,8)
 const heroi3 = criarHeroi('Lagartixa',60,19)
-telaIniciar
-function escolhaHeroi(heroi){
+function escolhaHeroi(){
     console.log('Heroi 1. '+(heroi1.nomeH)+' Vida: '+(heroi1.vidaH)+' Ataque: '+(heroi1.ataqueH))
     console.log('Heroi 2. '+(heroi2.nomeH)+' Vida: '+(heroi2.vidaH)+' Ataque: '+(heroi2.ataqueH))
     console.log('Heroi 3. '+(heroi3.nomeH)+' Vida: '+(heroi3.vidaH)+' Ataque: '+(heroi3.ataqueH))
-    heroi = leia('=========================================================')
-    return
+    let heroi = leia('=========================================================')
     switch (heroi){
         case '1':
-            heroi = heroi1
-            console.log(heroi.nomeH);
-            console.log(heroi.vidaH);
-            console.log(heroi.ataqueH)
+            heroiAtual = heroi1
+            console.log(heroiAtual.nomeH);
+            console.log(heroiAtual.vidaH);
+            console.log(heroiAtual.ataqueH)
+
+            mostrarMenu()
             break;
-        
         case '2':
-            heroi = heroi2
-            console.log(heroi.nomeH);
-            console.log(heroi.vidaH);
-            console.log(heroi.ataqueH)
+            heroiAtual = heroi2
+            console.log(heroiAtual.nomeH);
+            console.log(heroiAtual.vidaH);
+            console.log(heroiAtual.ataqueH)
+
+            mostrarMenu()
             break;
         case '3':
-            heroi = heroi3
-            console.log(heroi.nomeH);
-            console.log(heroi.vidaH);
-            console.log(heroi.ataqueH)
+            heroiAtual = heroi3
+            console.log(heroiAtual.nomeH);
+            console.log(heroiAtual.vidaH);
+            console.log(heroiAtual.ataqueH)
+
+            mostrarMenu()
             break;
         default:{
-            mostrarMenu
+            console.log('Comando invalido')
+            escolhaHeroi()
         }
-    } 
+    }
     
 }
 //iniciar
@@ -51,9 +56,10 @@ function telaIniciar(){
     console.log('Mais rápido que uma tartaruga, mais forte que um rato,\n e mais inteligente que um asno, ele é o Chapolin Colorado')
     let iniciarJG = leia('=========================================================')
     if (iniciarJG != false){
-        escolhaHeroi
+        escolhaHeroi()
     }
 }
+telaIniciar()
 
 
 //menu 
@@ -65,18 +71,21 @@ function mostrarMenu (){
     let escolha = leia('=========================================================')
     switch (escolha){
         case '1':
-            verStatus
+            verStatus()
+            break
         case '2':
-            lutar
+            lutar()
+            break
         case '0':
-            sair
+            sair()
+            break 
         default:
             console.log('========================comando invalido=================')
-            mostrarMenu
+            mostrarMenu()
 
     }
 
-
+    console.log(heroiAtual.nomeH)
 
 }
 
