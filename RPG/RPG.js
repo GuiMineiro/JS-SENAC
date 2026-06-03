@@ -2,6 +2,7 @@
 //escolha de personagem
 const leia = require('prompt-sync')()
 let heroiAtual = null
+let vidaAtual = null
 function criarHeroi(nome,vida = 100,ataque = 10){
     return{
     nomeH:nome,
@@ -20,6 +21,7 @@ function escolhaHeroi(){
     switch (heroi){
         case '1':
             heroiAtual = heroi1
+            vidaAtual = (heroiAtual.vidaH)
             console.log(heroiAtual.nomeH);
             console.log(heroiAtual.vidaH);
             console.log(heroiAtual.ataqueH)
@@ -28,6 +30,7 @@ function escolhaHeroi(){
             break;
         case '2':
             heroiAtual = heroi2
+            vidaAtual = (heroiAtual.vidaH)
             console.log(heroiAtual.nomeH);
             console.log(heroiAtual.vidaH);
             console.log(heroiAtual.ataqueH)
@@ -36,6 +39,7 @@ function escolhaHeroi(){
             break;
         case '3':
             heroiAtual = heroi3
+            vidaAtual = (heroiAtual.vidaH)
             console.log(heroiAtual.nomeH);
             console.log(heroiAtual.vidaH);
             console.log(heroiAtual.ataqueH)
@@ -71,7 +75,7 @@ function mostrarMenu (){
     let escolha = leia('=========================================================')
     switch (escolha){
         case '1':
-            verStatus()
+            mostrarStatus()
             break
         case '2':
             lutar()
@@ -85,8 +89,13 @@ function mostrarMenu (){
 
     }
 
-    console.log(heroiAtual.nomeH)
+}
 
+//status
+function mostrarStatus(){
+    console.log(heroiAtual.nomeH)
+    console.log('Vida: '+heroiAtual.vidaH+' / '+vidaAtual)
+    console.log('Ataque: '+heroiAtual.ataqueH)
 }
 
 
