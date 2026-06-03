@@ -10,10 +10,19 @@ function criarHeroi(nome,vida = 100,ataque = 10){
     ataqueH:ataque
     }
 }
+//herois e monstros
+
+const monstro1 = criarHeroi('Quase Nada',40,10)
+const monstro2 = criarHeroi('Tripa Seca',30,18)
+const monstro3 = criarHeroi('Pouca Trancas',50,6)
 const heroi1 = criarHeroi('Chapolin',80,12)
 const heroi2 = criarHeroi('SuperSam',100,8)
 const heroi3 = criarHeroi('Lagartixa',60,19)
+
+
+//escolha de heroi
 function escolhaHeroi(){
+    console.log('=========================================================')
     console.log('Heroi 1. '+(heroi1.nomeH)+' Vida: '+(heroi1.vidaH)+' Ataque: '+(heroi1.ataqueH))
     console.log('Heroi 2. '+(heroi2.nomeH)+' Vida: '+(heroi2.vidaH)+' Ataque: '+(heroi2.ataqueH))
     console.log('Heroi 3. '+(heroi3.nomeH)+' Vida: '+(heroi3.vidaH)+' Ataque: '+(heroi3.ataqueH))
@@ -92,11 +101,24 @@ function mostrarMenu (){
 }
 
 //status
-function mostrarStatus(){
+function mostrarStatus(Voltar){
+    console.log('=========================================================')
     console.log(heroiAtual.nomeH)
     console.log('Vida: '+heroiAtual.vidaH+' / '+vidaAtual)
     console.log('Ataque: '+heroiAtual.ataqueH)
+    console.log('0.Voltar para o menu')
+    let Voltar = leia('=========================================================')
+    if (Voltar != false){
+     mostrarMenu    
+    }
 }
+
+
+
+
+
+
+
 
 
     
