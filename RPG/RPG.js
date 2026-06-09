@@ -19,6 +19,18 @@ const heroi1 = criarHeroi('Chapolin',80,12)
 const heroi2 = criarHeroi('SuperSam',100,8)
 const heroi3 = criarHeroi('Lagartixa',60,19)
 
+// lutar
+
+function entrarLuta(){
+    console.log('=========================================================')
+    console.log('o heroi da nossa aventura acaba de encontrar um terrivel \n vilão!!!')
+    
+
+
+
+
+}
+
 
 //escolha de heroi
 function escolhaHeroi(){
