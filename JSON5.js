@@ -21,7 +21,8 @@ var maiores = []
 for(const aluno of alunos ){
     if (aluno.idade >= 18){
         contador = contador + 1
-        maiores.push(aluno.nome)}
+        maiores.push(aluno.nome)
+    }
 }
 console.log(`Quantidade: ${contador} \n
     Sendo os alunos ${maiores}`)
