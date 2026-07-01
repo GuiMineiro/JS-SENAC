@@ -29,5 +29,14 @@ produtos.push(novoProduto)
 console.log(produtos)
 
 //encontrar o indice de um produto
-const indice = produtos.findIndex(produtos=>produtos.id===4)
+const indice = produtos.findIndex(produtos=>produtos.id===2)
 console.log(indice)
+
+//excluir um produto do cadastro
+produtos.splice(indice,1)//importante definir quantos objetos serao removidos
+console.log(produtos)
+
+//remover uma propriedade de um produto
+delete produtos[2].preco
+console.log(produtos)
+
